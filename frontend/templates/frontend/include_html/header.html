@@ -1,0 +1,122 @@
+<header id="header" class="cd-auto-hide-header">
+    <!--original menu location-->
+
+    <div id="navigation" class="pageWidth">
+      <div class="iosHack"></div>
+      <div class="rightLanguageSwitcher"></div>
+
+      <div class="pageContent">
+        <nav>
+          <div class="navTabs">
+            <ul class="publicTabs">
+              <div class="mobileMenuButton hiddenResponsiveFull">
+                <a id="nav-icon4" href="/">
+                </a>
+              </div>
+
+              <div class="hiddenWideUnder fl_l">
+                <a id="lzt-logo" href="/"> </a>
+
+                <li class="navTab selected">
+                  <div class="tabLinks">
+                    <ul class="secondaryContent blockLinksList">
+                      <li>
+                        <a data-savepage-href="/" href="/">
+                          Маркет
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/">
+                          Статьи
+                        </a>
+                      </li>
+                      <li>
+                        <a data-savepage-href="/guarantor" href="/">
+                          Гарант
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/">
+                          Статьи
+                        </a>
+                      </li>
+
+                      <li>
+                        <div class="Popup">
+                          <a href="/">
+                            Статьи
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+            </ul>
+            <div class="account-links">
+              
+              {% if not user.is_authenticated %}
+                <a class="button primary login-and-signup-btn OverlayTrigger" data-savepage-href="login/" href="/login">
+                  Войти
+                </a>
+                <a class="button signup-btn login-and-signup-btn OverlayTrigger" data-savepage-href="register/" href="/registration">
+                  Создать аккаунт
+                </a>
+              {% else %}
+                <a class="button primary login-and-signup-btn OverlayTrigger" data-savepage-href="login/" href="/user/{{ user.id }}">
+                  Профиль
+                </a>
+                <a class="button signup-btn login-and-signup-btn OverlayTrigger" data-savepage-href="register/" href="/logout">
+                  Выйти
+                </a>
+              {% endif %}
+
+              <li id="searchBar" class="pageWidth">
+                <fieldset class="QuickSearch" data-member-search-url="members/search">
+                  <form action="/" method="get" target="_blank" class="formPopup">
+                    <div class="primaryControls">
+                      <!-- block: primaryControls -->
+                      <input type="text" name="keywords" class="textCtrl QuickSearchQuery" placeholder="Поиск..." title="Введите параметры поиска и нажмите ввод" autocomplete="off" value="">
+                      <i class="QuickSearchClear far fa-times"></i>
+                      <!-- end block: primaryControls -->
+                    </div>
+
+                    <div class="secondaryControls">
+                      <div class="orderBy">
+                        <div class="bold title">Критерий сортировки:</div>
+                        <ul>
+                          <li>
+                            <label for="ctrl_order_date_top"><input type="radio" name="order" id="ctrl_order_date_top" value="date" checked="checked">
+                              По дате создания</label>
+                          </li>
+                          <li>
+                            <label for="ctrl_order_relevance_top"><input type="radio" name="order" id="ctrl_order_relevance_top" value="relevance">
+                              Степень соответствия</label>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <button type="submit" class="searchButton">
+                        Поиск тем и сообщений
+                        <i class="far fa-chevron-right searchButtonIcon"></i>
+                      </button>
+
+                      <a data-savepage-href="search/?type=post" href="http://127.0.0.1:8000" class="searchButton" target="_blank">
+                        Поиск тем и сообщений
+                        <i class="far fa-chevron-right searchButtonIcon"></i>
+                      </a>
+
+                      <div class="SearchResultsList"></div>
+                      <input type="hidden" name="_xfToken" value="">
+                    </div>
+                  </form>
+                </fieldset>
+              </li>
+            </div>
+          </div>
+          <span class="helper"> </span>
+        </nav>
+      </div>
+    </div>
+  </header>
